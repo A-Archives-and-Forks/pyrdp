@@ -41,6 +41,7 @@ dependencies = [
     'appdirs>=1,<2',
     'cryptography>=3.3.2,<42',
     'namesgenerator>=0.3,<1',
+    'numpy>=1,<2',
     'progressbar2>=3.20,<5',
     'pyasn1>=0,<1',
     'pycryptodome>=3.5,<4',
