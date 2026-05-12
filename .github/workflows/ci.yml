@@ -57,9 +57,12 @@ jobs:
       - name: Install PyRDP dependencies
         run: |
           sudo apt-get update && sudo apt-get install -y --no-install-recommends \
-              build-essential python3-dev \
+              build-essential python3-dev pkg-config \
               libegl1 libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-keysyms1 \
-              libavcodec58 libavdevice58
+              libavcodec58 libavdevice58 \
+              libavformat-dev libavcodec-dev libavdevice-dev libavfilter-dev \
+              libswscale-dev libavutil-dev
+
       - name: Install PyRDP
         working-directory: .
         run: pip install -U -e .[full]
