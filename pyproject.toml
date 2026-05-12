@@ -41,6 +41,9 @@ dependencies = [
     'appdirs>=1,<2',
     'cryptography>=3.3.2,<42',
     'namesgenerator>=0.3,<1',
+    # working around Windows build bugs #512
+    'numpy>=1,<2; python_version < "3.13"',
+    "numpy>=1.26.4; python_version >= '3.13'",
     'progressbar2>=3.20,<5',
     'pyasn1>=0,<1',
     'pycryptodome>=3.5,<4',
@@ -55,7 +58,7 @@ dependencies = [
 [project.optional-dependencies]
 full = [
     'wheel>=0.34.2',
-    'av>=8,<15',
+    'av>=8,<14',
     'PySide6>=6.3,<7',
     'qimage2ndarray>=1.6,<2',
     'py-notifier>=0.5.0',

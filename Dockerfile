@@ -6,7 +6,11 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 python3-pip python3-venv \
         # Required to build RLE module
-        build-essential python3-dev
+        build-essential python3-dev pkg-config \
+        libavformat-dev libavcodec-dev libavdevice-dev libavfilter-dev \
+        libswscale-dev libavutil-dev \
+        # minimize image size
+        && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /opt/venv
 # Make sure we use the virtualenv:
