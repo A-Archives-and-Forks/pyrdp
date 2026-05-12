@@ -126,6 +126,8 @@ class GCCParser(Parser):
         stream = BytesIO()
         stream.write(per.writeChoice(0))
         stream.write(per.writeObjectIdentifier(GCCParser.T124_02_98_OID))
+        # XRDP compatiblity returning bad capability type
+        # ref https://github.com/GoSecure/pyrdp/issues/294
         stream.write(per.writeLength(len(pdu.payload) + 14))
         stream.write(per.writeChoice(pdu.header))
 
